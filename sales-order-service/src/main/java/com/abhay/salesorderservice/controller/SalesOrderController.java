@@ -22,7 +22,7 @@ public class SalesOrderController {
     private OrderService orderService;
 
     /**
-     * @param salesOrderDto - Order request object from client
+     * @param salesOrderDto  Order request object from client
      * @return SalesOrderDto - Returns DTO with order details
      */
     @PostMapping("/orders")
@@ -33,7 +33,7 @@ public class SalesOrderController {
 
     /**
      * @param cust_id
-     * @return
+     * @return ResponseEntity<List<SalesOrderDto>>
      */
     @GetMapping("/orders")
     public ResponseEntity<List<SalesOrderDto>> getAllOrdersOfACustomer(@RequestParam("customerId") Long cust_id) {
@@ -49,6 +49,10 @@ public class SalesOrderController {
                 ResponseEntity.ok(salesOrderDtoList);
     }
 
+    /**
+     * @param orderId
+     * @return ResponseEntity<SalesOrderDto>
+     */
     @GetMapping("/order/{orderId}")
     public ResponseEntity<SalesOrderDto> getOrderDetailsByOrderId(@PathVariable Long orderId) {
         SalesOrderDto salesOrderDto = orderService.getOrderDetailsByOrderId(orderId);
@@ -62,6 +66,10 @@ public class SalesOrderController {
 //        return orderService.updateOrder(orderId,salesOrderDtoInput);
 //    }
 
+    /**
+     * @param orderId
+     * @return ResponseEntity<SalesOrderDto>
+     */
     @DeleteMapping("/order/{orderId}")
     public ResponseEntity<SalesOrderDto> deleteOrderByOrderId(@PathVariable Long orderId){
         SalesOrderDto salesOrderDto = orderService.deleteOrderByOrderId(orderId);
@@ -70,6 +78,11 @@ public class SalesOrderController {
                 ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 
     }
+
+    /**
+     * @param throwable
+     * @return
+     */
     public SalesOrderDto fallbackItemServiceDown(Throwable throwable){
         SalesOrderDto salesOrderDto = new SalesOrderDto();
         salesOrderDto.setOrder_desc("item service down, order cannot be placed");

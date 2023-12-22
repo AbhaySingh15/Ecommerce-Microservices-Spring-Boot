@@ -18,6 +18,9 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
+    /**
+     * @return List<Item>
+     */
     @GetMapping("/items")
     public List<Item> getAllItems(){
 //        var itemList = itemService.getAllItems();
@@ -28,11 +31,19 @@ public class ItemController {
         return itemService.getAllItems();
     }
 
+    /**
+     * @param name  list of item names
+     * @return
+     */
     @GetMapping("/item")
     public List<Item> findItemsByName(@RequestParam String... name){
         return itemService.getItemsByName(name);
     }
 
+    /**
+     * @param itemsToAdd
+     * @return
+     */
     @PostMapping("/addItem")
     public ResponseEntity<List<Item>> addItem(@RequestBody List<@Valid Item> itemsToAdd){
         List<Item> itemsSuccessfullyAdded = new ArrayList<>();
@@ -44,6 +55,10 @@ public class ItemController {
         return ResponseEntity.ok(itemsSuccessfullyAdded);
     }
 
+    /**
+     * @param name
+     * @return
+     */
     @GetMapping("/item/{name}")
     public Item findItemByName(@PathVariable("name") String name){
         return itemService.getItemByName(name);

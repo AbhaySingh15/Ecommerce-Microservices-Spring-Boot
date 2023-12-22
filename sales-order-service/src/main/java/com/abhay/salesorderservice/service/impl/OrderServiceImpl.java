@@ -40,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
 //    private CustomerClient customerClient;
 
     /**
-     * @param salesOrderDtoInput - Order request object from client
+     * @param salesOrderDtoInput  Order request object from client
      * @return SalesOrderDto - DTO of sales order created
      */
     @Override
@@ -83,8 +83,8 @@ public class OrderServiceImpl implements OrderService {
 //    }
 
     /**
-     * @param customer - Optional customer object
-     * @param itemArray - itemArray containing list of requested items
+     * @param customer  Optional customer object
+     * @param itemArray  itemArray containing list of requested items
      * @throws MyException - Exception stating why order is not created
      */
     private void checksBeforePlacingOrder(Optional<CustomerSOS> customer, Item[] itemArray) throws MyException {
@@ -98,8 +98,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param salesOrderDtoInput - Object request object from client
-     * @param exceptionMessage - Exception message explaining why order is not created
+     * @param salesOrderDtoInput  Object request object from client
+     * @param exceptionMessage  Exception message explaining why order is not created
      * @return SalesOrderDto - Sales order dto with status not placed and reason for it
      */
     private SalesOrderDto handleCreateOrderException(SalesOrderDto salesOrderDtoInput, String exceptionMessage) {
@@ -111,7 +111,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param itemArray - Item array containing list of requested items
+     * @param itemArray  Item array containing list of requested items
      * @return double - Total price of order
      */
     private double getOrderPrice(Item[] itemArray){
@@ -119,7 +119,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param cust_id - Customer ID
+     * @param cust_id  Customer ID
      * @return List<SalesOrderDto> - List of all sales order of a customer
      */
     @Override
@@ -133,7 +133,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param order_id - Order ID of order whose details are requested
+     * @param order_id  Order ID of order whose details are requested
      * @return SalesOrderDTO - DTO with details of requested order
      */
     @Override
@@ -147,7 +147,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param itemNameList - List containing requested items
+     * @param itemNameList  List containing requested items
      * @return Item[] - Array containing items requested from item service
      */
     public Item[] getItemsFromItemService(List<String> itemNameList) {
@@ -169,7 +169,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param orderId - ID of the order to be deleted
+     * @param orderId  ID of the order to be deleted
      * @return SalesOrderDto - DTO of SalesOrder deleted
      */
     @Override
@@ -191,8 +191,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * @param items - Items to create Order Line Item List
-     * @param salesOrder - Sales order to set in each order line item
+     * @param items  Items to create Order Line Item List
+     * @param salesOrder  Sales order to set in each order line item
      * @return List<Order_Line_Item> - List of order line item
      */
     public List<Order_Line_Item> createOrderLineItemList(Item[] items, SalesOrder salesOrder) {

@@ -11,19 +11,19 @@
         <module name="eureka-service-registry" />
         <module name="kafka-service" />
         <module name="sales-order-service" />
-        <module name="customer-service" />
         <module name="api-gateway" />
-        <module name="order-lookup-service" />
         <module name="Item-Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="customer-service" target="17" />
       <module name="hystrix-dashboard" target="17" />
       <module name="item-service" target="17" />
       <module name="kafka-service" target="17" />
       <module name="Online-Shopping-Micorservices-Project" target="1.5" />
       <module name="online-shopping-microservices-parent" target="1.5" />
       <module name="online-shopping-microservices-project-CTS" target="17" />
+      <module name="order-lookup-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

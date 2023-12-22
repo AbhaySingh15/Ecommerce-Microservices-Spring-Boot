@@ -30,6 +30,10 @@ public class ItemServiceImpl implements ItemService {
        return itemRepo.getAllItems();
     }
 
+    /**
+     * @param name
+     * @return
+     */
     @Override
     public List<Item> getItemsByName(String... name) {
         List<Item> listOfItems = new ArrayList<>();
@@ -44,6 +48,10 @@ public class ItemServiceImpl implements ItemService {
         return listOfItems;
     }
 
+    /**
+     * @param item
+     * @return
+     */
     @Override
     public Item addItem(Item item) {
         Optional<Categories> checkCategory = categoriesRepository.findById(item.getCategoryId());
@@ -60,6 +68,10 @@ public class ItemServiceImpl implements ItemService {
         }
     }
 
+    /**
+     * @param name
+     * @return
+     */
     @Override
     public Item getItemByName(String name) {
         return itemRepo.findByName(name);
