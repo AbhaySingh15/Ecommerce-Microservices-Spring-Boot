@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: sales-order-service
+  datasource:
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/sales_order_service_db
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: '9003'
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: INFO
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+      slidingWindowSize: 60
+      slidingWindowType: TIME_BASED
+      permittedNumberOfCallsInHalfOpenState: 3
+      minimumNumberOfCalls: 10
+      waitDurationInOpenState: 5s
+      slowCallRateThreshold: 100
+      slowCallDurationThreshold: 2000
+      failureRateThreshold: 50

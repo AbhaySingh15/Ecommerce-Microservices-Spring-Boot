@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: item-service
+  profiles:
+    active: dev
+  sql:
+    init:
+      mode: always
+
+  datasource:
+    password: password
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/item_service_db
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#   (uncomment when first time running the project)
+    defer-datasource-initialization: true
+server:
+  port: '9001'
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: INFO
