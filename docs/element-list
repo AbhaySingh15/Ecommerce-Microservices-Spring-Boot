@@ -1,0 +1,16 @@
+com.abhay.itemservice
+com.abhay.itemservice.controller
+com.abhay.itemservice.entity
+com.abhay.itemservice.repository
+com.abhay.itemservice.service
+com.abhay.itemservice.service.impl
+com.abhay.salesorderservice
+com.abhay.salesorderservice.controller
+com.abhay.salesorderservice.dto
+com.abhay.salesorderservice.entity
+com.abhay.salesorderservice.enums
+com.abhay.salesorderservice.exception
+com.abhay.salesorderservice.repository
+com.abhay.salesorderservice.service
+com.abhay.salesorderservice.service.feignclient
+com.abhay.salesorderservice.service.impl
