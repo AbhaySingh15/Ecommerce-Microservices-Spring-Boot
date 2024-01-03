@@ -128,7 +128,7 @@ public class OrderServiceImpl implements OrderService {
         List<SalesOrderDto> salesOrderDto = salesOrder.stream()
                 .map(order -> modelMapper.map(order, SalesOrderDto.class))
                 .collect(Collectors.toList());
-        log.info(salesOrderDto.toString());
+//        log.info(salesOrderDto.toString());
         return salesOrderDto;
     }
 

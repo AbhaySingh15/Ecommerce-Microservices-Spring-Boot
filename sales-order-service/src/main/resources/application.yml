@@ -18,6 +18,8 @@ logging:
     org:
       hibernate:
         SQL: INFO
+  file:
+    path: ./sales-order-service
 
 resilience4j.circuitbreaker:
   configs:

@@ -26,3 +26,5 @@ logging:
     org:
       hibernate:
         SQL: INFO
+  file:
+    path: ./item-service

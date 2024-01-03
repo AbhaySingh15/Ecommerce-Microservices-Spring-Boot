@@ -6,6 +6,7 @@ import com.abhay.salesorderservice.exception.MyException;
 import com.abhay.salesorderservice.service.OrderService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
+@Slf4j
 public class SalesOrderController {
 
     @Autowired
@@ -56,7 +58,7 @@ public class SalesOrderController {
     @GetMapping("/order/{orderId}")
     public ResponseEntity<SalesOrderDto> getOrderDetailsByOrderId(@PathVariable Long orderId) {
         SalesOrderDto salesOrderDto = orderService.getOrderDetailsByOrderId(orderId);
-        return !salesOrderDto.toString().isEmpty() ?
+        return salesOrderDto.getId()!=null ?
                 ResponseEntity.ok(salesOrderDto):
                 ResponseEntity.status(HttpStatus.NOT_FOUND).body(salesOrderDto);
     }

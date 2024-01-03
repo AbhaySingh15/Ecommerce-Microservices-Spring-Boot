@@ -12,6 +12,7 @@ import com.abhay.salesorderservice.service.impl.OrderServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -25,8 +26,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
@@ -41,6 +41,8 @@ public class ServiceLayerTest {
     private Customer_SOS_Repository customer_sos_repository;
     @MockBean
     private OrderRepository orderRepository;
+    @MockBean
+    private ModelMapper modelMapper;
     @Autowired
     @InjectMocks
     private OrderServiceImpl orderService;
@@ -141,5 +143,22 @@ public class ServiceLayerTest {
         return customerSOS;
     }
 
+//    @Test
+//    public void testGetOrderDetailsByOrderID(){
+////      when(orderRepository.findById(any(Long.class))).thenReturn(Optional.of(new SalesOrder()));
+////      SalesOrderDto salesOrderDto = new SalesOrderDto();
+////      salesOrderDto.setId(1L);
+////      when(modelMapper.map(any(SalesOrder.class),SalesOrderDto.class)).thenReturn(salesOrderDto);
+////      assertNotNull(orderService.getOrderDetailsByOrderId(1L).getId());
+//
+//        SalesOrder salesOrder = new SalesOrder();
+//        salesOrder.setId(1L);
+//
+//        when(orderRepository.findById(any(Long.class))).thenReturn(Optional.of(salesOrder));
+//        SalesOrderDto salesOrderDto = orderService.getOrderDetailsByOrderId(1L);
+//        log.info(salesOrderDto.getId().toString());
+////        assertNotNull(orderService.getOrderDetailsByOrderId(1L).getId());
+//
+//    }
 }
 
