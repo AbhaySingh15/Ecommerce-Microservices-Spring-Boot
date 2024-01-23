@@ -72,16 +72,6 @@ public class OrderServiceImpl implements OrderService {
         return salesOrderDto;
     }
 
-//    private void checksBeforePlacingOrder(Optional<CustomerSOS> customer, Item[] itemArray) throws MyException {
-//        if (customer.isEmpty()) {
-//            throw new MyException(ResultEnum.CUSTOMER_NOT_FOUND);
-//        } else {
-//            if (ArrayUtils.isEmpty(itemArray)) {
-//                throw new MyException(ResultEnum.NO_ITEM_IN_STOCK);
-//            }
-//        }
-//    }
-
     /**
      * @param customer  Optional customer object
      * @param itemArray  itemArray containing list of requested items

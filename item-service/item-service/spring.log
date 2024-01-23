@@ -1,0 +1,22 @@
+2024-01-14T23:22:39.503+05:30  INFO 3697 --- [item-service] [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:9296
+2024-01-14T23:22:39.555+05:30  INFO 3697 --- [item-service] [main] c.c.c.ConfigServicePropertySourceLocator : Exception on Url - http://localhost:9296:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9296/item-service/default": Connection refused. Will be trying the next url if available
+2024-01-14T23:22:39.555+05:30  WARN 3697 --- [item-service] [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:9296/item-service/default": Connection refused
+2024-01-14T23:22:39.561+05:30  INFO 3697 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : The following 1 profile is active: "dev"
+2024-01-14T23:22:41.225+05:30  INFO 3697 --- [item-service] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-01-14T23:22:41.225+05:30  INFO 3697 --- [item-service] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-01-14T23:22:41.226+05:30  INFO 3697 --- [item-service] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-01-14T23:22:41.240+05:30  INFO 3697 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : Started WebLayerTest in 2.293 seconds (process running for 2.988)
+2024-01-14T23:22:41.282+05:30  INFO 3697 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : [{"description":"dummy description","price":50.0,"links":[]}]
+2024-01-14T23:22:41.323+05:30  INFO 3697 --- [item-service] [main] c.a.i.controller.ItemController          : 0inside controller
+2024-01-14T23:54:17.696+05:30  INFO 4703 --- [item-service] [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:9296
+2024-01-14T23:54:17.753+05:30  INFO 4703 --- [item-service] [main] c.c.c.ConfigServicePropertySourceLocator : Exception on Url - http://localhost:9296:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:9296/item-service/default": Connection refused. Will be trying the next url if available
+2024-01-14T23:54:17.753+05:30  WARN 4703 --- [item-service] [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:9296/item-service/default": Connection refused
+2024-01-14T23:54:17.760+05:30  INFO 4703 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : The following 1 profile is active: "dev"
+2024-01-14T23:54:19.453+05:30  INFO 4703 --- [item-service] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-01-14T23:54:19.454+05:30  INFO 4703 --- [item-service] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-01-14T23:54:19.455+05:30  INFO 4703 --- [item-service] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-01-14T23:54:19.469+05:30  INFO 4703 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : Started WebLayerTest in 2.391 seconds (process running for 3.089)
+2024-01-14T23:54:19.520+05:30  INFO 4703 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : [{"name":"dummy item","description":"dummy description","price":50.0,"links":[]}]
+2024-01-14T23:54:19.574+05:30  INFO 4703 --- [item-service] [main] c.a.i.controller.ItemController          : 0inside controller
+2024-01-14T23:54:19.605+05:30  INFO 4703 --- [item-service] [main] com.abhay.itemservice.WebLayerTest       : [{"description":"dummy description","price":50.0,"links":[]}]
+2024-01-14T23:54:19.606+05:30  INFO 4703 --- [item-service] [main] c.a.i.controller.ItemController          : 0inside controller

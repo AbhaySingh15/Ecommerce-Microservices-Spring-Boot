@@ -69,4 +69,19 @@ public class WebLayerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print()).andExpect(status().isOk());
     }
+//    @Test
+//    public void testAddItemNegative() throws Exception {
+//        when(itemService.addItem(any(Item.class))).thenReturn(new Item());
+//        List<Item> itemList = new ArrayList<>();
+//        Item item = new Item();
+//        item.setName(null);
+//        item.setDescription("dummy description");
+//        item.setPrice(50.00);
+//        item.setCategoryId(-1);
+//        itemList.add(item);
+//        log.info(objectMapper.writeValueAsString(itemList));
+//        mockMvc.perform(post("/addItem").content(objectMapper.writeValueAsString(itemList))
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andDo(print()).andExpect(status().isInternalServerError());
+//    }
 }

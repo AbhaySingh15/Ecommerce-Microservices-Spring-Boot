@@ -3,6 +3,7 @@ package com.abhay.itemservice.entity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -32,7 +33,7 @@ public class Item extends RepresentationModel<Item> {
     private ItemCategory itemCategory;
 
     @Transient
-    @NotNull
+    @Min(value = 1)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private int categoryId;
 }
