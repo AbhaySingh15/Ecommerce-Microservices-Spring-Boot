@@ -1,4 +1,4 @@
-# Ecommerce-Microservices-Spring-Boote
+# Ecommerce-Microservices-Spring-Boot
 Ecommerce microservices project made using spring boot 
 
 ## ER Diagram
